@@ -15,5 +15,5 @@ MonoBehaviour:
   nameString: Stone Harvester
   prefab: {fileID: 1415070089003269192, guid: 094b9842388d95843886e668b5d287a9, type: 3}
   resourceGeneratedData:
-    timerMax: 0
+    timerMax: 2
     resourceTypeSO: {fileID: 11400000, guid: 704aaf26e73945643a7cd257878fcd89, type: 2}

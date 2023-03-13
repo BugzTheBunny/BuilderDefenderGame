@@ -6,4 +6,5 @@ using UnityEngine;
 public class ResourceTypeSO : ScriptableObject
 {
     [SerializeField] public string nameString;
+    [SerializeField] public Sprite sprite;
 }
