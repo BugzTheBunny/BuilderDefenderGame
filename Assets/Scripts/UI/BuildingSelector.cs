@@ -19,7 +19,7 @@ public class BuildingSelector : MonoBehaviour
             btnTransform.name = bType.nameString;
             btnTransform.gameObject.SetActive(true);
 
-            float offset = 100f;
+            float offset = 80f;
             btnTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(offset * index,0);
 
             btnTransform.Find("image").GetComponent<Image>().sprite = bType.sprite;
