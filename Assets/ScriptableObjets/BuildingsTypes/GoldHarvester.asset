@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GoldHarvester
   m_EditorClassIdentifier: 
   nameString: Gold Harvester
-  prefab: {fileID: 1415070089003269192, guid: 094b9842388d95843886e668b5d287a9, type: 3}
+  prefab: {fileID: 1415070089003269192, guid: 91a89192899e6524ebef5635ae902f73, type: 3}
   resourceGeneratedData:
-    timerMax: 2
-    resourceTypeSO: {fileID: 11400000, guid: 704aaf26e73945643a7cd257878fcd89, type: 2}
-  sprite: {fileID: 21300000, guid: 2263e91ebcd2a254dab5f4caccb4a7af, type: 3}
+    timerMax: 5
+    resourceTypeSO: {fileID: 11400000, guid: 968443cc636cb2b408c4612ecb9bd16d, type: 2}
+  sprite: {fileID: 21300000, guid: 8ead931dd91bff8489e75de9c414f17f, type: 3}

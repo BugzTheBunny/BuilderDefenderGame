@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class BuildingSelector : MonoBehaviour
 {   
-
+    private Dictionary<BuildingTypeSO,Transform> btnTransformDict;
     private void Awake() {
         // Getting template & disabling initial
         Transform btnTemplate = transform.Find("btnTemplate");
         btnTemplate.gameObject.SetActive(false);
 
         BuildingTypeListSO buildingTypeListSO = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
+
+        btnTransformDict = new Dictionary<BuildingTypeSO, Transform>();
 
         int index = 0;
         foreach(BuildingTypeSO bType in buildingTypeListSO.list) {
@@ -26,11 +28,35 @@ public class BuildingSelector : MonoBehaviour
             
             btnTransform.GetComponent<Button>().onClick.AddListener(() => {
                 BuildingManager.Instance.SetActiveBuildingType(bType);
-                Debug.Log(bType.nameString);
             });
+
+            btnTransformDict[bType] = btnTransform;
 
             index ++;
         } 
+    }
+
+    private void Start() {
+        BuildingManager.Instance.OnActiveBuildingTypeChanged += OnActiveBuildingTypeChangedEvent;
+        UpdateActiveBuildingTypeButton();
+    }
+
+    private void OnActiveBuildingTypeChangedEvent(object sender,BuildingManager.OnActiveBuildingTypeChangedEventArgs e){
+        UpdateActiveBuildingTypeButton();
+    }
+
+
+    private void UpdateActiveBuildingTypeButton() {
+        foreach (BuildingTypeSO buildingType in btnTransformDict.Keys) {
+            Transform btnTransform = btnTransformDict[buildingType];
+
+            btnTransform.Find("selected").gameObject.SetActive(false);
+        }
+        
+        BuildingTypeSO activeBuildingType = BuildingManager.Instance.GetActiveBuildingType();
+        if (activeBuildingType) {
+            btnTransformDict[activeBuildingType]?.Find("selected").gameObject.SetActive(true);
+        }
     }
 
 }

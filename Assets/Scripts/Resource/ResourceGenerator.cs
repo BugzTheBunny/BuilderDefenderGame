@@ -21,4 +21,6 @@ public class ResourceGenerator : MonoBehaviour
             ResourceManager.Instance.AddResource(buildingType.resourceGeneratedData.resourceTypeSO, 1);
         }
     }
+
+    
 }

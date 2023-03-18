@@ -21,18 +21,8 @@ public class ResourceManager : MonoBehaviour
             resourceAmountDict[rType] = 0;
         }
 
-        TestLogResourceDict();
     }
 
-    private void Update() {
-
-    }
-
-    private void TestLogResourceDict() {
-        foreach (ResourceTypeSO rType in resourceAmountDict.Keys) {
-            Debug.Log(rType.name + ": " + resourceAmountDict[rType]);
-        }
-    }
 
     public void AddResource(ResourceTypeSO rType, int amount) {
         resourceAmountDict[rType] += amount;
