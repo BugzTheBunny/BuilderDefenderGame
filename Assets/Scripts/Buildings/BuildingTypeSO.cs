@@ -9,6 +9,7 @@ public class BuildingTypeSO : ScriptableObject {
     public Transform prefab;
     public ResourceGeneratedData resourceGeneratedData;
     public Sprite sprite;
+    public float minCostractionRadius;
 
     
 
